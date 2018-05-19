@@ -1,0 +1,54 @@
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Train Schedule</title>
+
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="assets/java/java.js"></script>
+  <script src="assets/java/moment.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+
+  <meta name="viewport" content="width=device-width", initial-scale="1.0">
+</head>
+<body>
+  <div class="jumbotron text-center"><h1 class="display-3">Current Schedule</h1></div>
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <table id="emptable" class="table-striped table-hover table-responsive-xl" style="width:100%">
+                      <tbody id="thebody">
+                  <th><h6>Train Name</h6></th>
+                  <th><h6>Destination</h6></th>
+                  <th><h6>Frequency</h6></th>
+                  <th><h6>Next Arrival</h6></th>
+                  <th><h6>Minutes Away</h6></th>
+                  </tbody>
+
+              </table>
+              
+          </div>
+          <div class="col-xl-6">
+              <br><br>
+                  <h4>Add a new train</h4><br>
+                  <form id="new-form">
+                          <label for="name-input">Train Name:</label><br>
+                          <input type="text" class="form-control" id="name-input" placeholder="Train Name" required><br>
+                          <label for="dest-input">Destination:</label><br>
+                          <input type="text" class="form-control" id="dest-input" placeholder="Destination" required><br>
+                          <label for="start-input">Start time:</label><br>
+                          <input type="time" class="form-control" id="start-input" placeholder="08:46" required><br>
+                          <label for="rate-input">Frequency (Minutes):</label><br>
+                          <input type="number"  class="form-control" step="1" id="rate-input" placeholder="1" min="1" required><br>
+                          <input id="form-input" type="submit" value="Submit" class="btn-primary" >
+                  </form><br>
+                  <button type="button" id="cleararr" class="btn btn-primary">Clear Data</button>
+          </div>
+
+      </div>
+  </div>
+</body>
